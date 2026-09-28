@@ -1,0 +1,284 @@
+.growth {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 80px 0;
+  background: var(--surface);
+  scroll-margin-top: 16px;
+}
+
+.growth__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.growth__row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.growth__row--reverse {
+  flex-direction: column-reverse;
+}
+
+/* ---------- Text ---------- */
+.growth__text {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 574px;
+}
+
+.growth__text--creators {
+  max-width: 580px;
+}
+
+.growth__text h2 {
+  color: var(--gray-950);
+}
+
+.growth__title-narrow {
+  max-width: 400px;
+}
+
+.growth__lead {
+  max-width: 477px;
+  color: var(--gray-700);
+}
+
+.growth__text--creators .growth__lead {
+  max-width: none;
+}
+
+.growth__stats {
+  display: flex;
+  gap: 40px;
+}
+
+/* label comes first in the HTML, but the number is shown on top */
+.growth__stats div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.growth__stats dd {
+  color: var(--blue);
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 44px;
+  letter-spacing: -0.01em;
+}
+
+.growth__stats dt {
+  color: var(--gray-700);
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.growth__perks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.growth__perks li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.growth__perks svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--blue);
+}
+
+/* ---------- Collages ----------
+   Same idea as the hero: fixed-size stage, scaled down on small screens. */
+.collage {
+  position: relative;
+  width: 100%;
+}
+
+.collage__stage {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-origin: top center;
+}
+
+.collage__stage > * {
+  position: absolute;
+}
+
+.collage--learners {
+  height: 287px;
+}
+
+.collage--learners .collage__stage {
+  width: 621px;
+  height: 552px;
+  transform: translateX(-50%) scale(0.52);
+}
+
+.collage--creators {
+  height: 358px;
+}
+
+.collage--creators .collage__stage {
+  width: 541px;
+  height: 596px;
+  transform: translateX(-50%) scale(0.6);
+}
+
+.collage__photo {
+  max-width: none;
+  box-shadow:
+    5px 8px 10px rgb(0 0 0 / 0.07),
+    17px 24px 24px rgb(0 0 0 / 0.09),
+    51px 73px 72px rgb(0 0 0 / 0.13);
+}
+
+.collage__card {
+  top: 0;
+  left: 0;
+  width: 373px;
+}
+
+.collage__photo--student {
+  top: 12px;
+  left: 0;
+  width: 577px;
+  height: 540px;
+  object-fit: cover;
+}
+
+.collage__progress {
+  top: 213px;
+  left: 345px;
+}
+
+.collage__revenue {
+  top: 44px;
+  left: 0;
+}
+
+.collage__year {
+  top: 194px;
+  left: 0;
+}
+
+/* the photo is zoomed and cropped the same way as in Figma */
+.collage__photo--creator {
+  top: 0;
+  left: 28px;
+  width: 435px;
+  height: 596px;
+  overflow: hidden;
+}
+
+.collage__photo--creator img {
+  position: absolute;
+  top: 0;
+  left: -124px;
+  width: 683px;
+  height: 683px;
+  max-width: none;
+}
+
+.collage__students {
+  top: 413px;
+  left: 283px;
+}
+
+@media (min-width: 640px) {
+  .growth__stats {
+    gap: 56px;
+  }
+
+  .collage--learners {
+    height: 442px;
+  }
+
+  .collage--learners .collage__stage {
+    transform: translateX(-50%) scale(0.8);
+  }
+
+  .collage--creators {
+    height: 536px;
+  }
+
+  .collage--creators .collage__stage {
+    transform: translateX(-50%) scale(0.9);
+  }
+}
+
+@media (min-width: 768px) {
+  .collage--learners {
+    height: 552px;
+  }
+
+  .collage--creators {
+    height: 596px;
+  }
+
+  .collage--learners .collage__stage,
+  .collage--creators .collage__stage {
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 1024px) {
+  .growth {
+    padding: 120px 0;
+  }
+}
+
+/* Side by side on large screens */
+@media (min-width: 1280px) {
+  .growth__inner {
+    gap: 72px;
+  }
+
+  .growth__row,
+  .growth__row--reverse {
+    flex-direction: row;
+  }
+
+  .growth__row {
+    gap: 63px;
+  }
+
+  .growth__row--reverse {
+    gap: 79px;
+  }
+
+  .growth__text {
+    flex-shrink: 0;
+    width: 574px;
+    gap: 40px;
+  }
+
+  .growth__text--creators {
+    width: 580px;
+  }
+
+  /* in the design this row is 1258px wide, so the collage goes 58px into the right margin */
+  .collage--learners {
+    flex-shrink: 0;
+    width: 621px;
+    margin-right: -58px;
+  }
+
+  .collage--creators {
+    flex-shrink: 0;
+    width: 541px;
+  }
+}

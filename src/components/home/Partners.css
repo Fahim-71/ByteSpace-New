@@ -1,0 +1,37 @@
+.partners {
+  padding: 48px 0;
+  background: var(--gray-50);
+}
+
+.partners__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 32px 48px;
+  max-width: 1132px;
+  margin: 0 auto;
+  color: var(--gray-400);
+}
+
+.partners__logo {
+  width: auto;
+  height: 32px;
+}
+
+@media (min-width: 640px) {
+  .partners__logo {
+    height: 41px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .partners {
+    padding: 80px 0;
+  }
+
+  .partners__list {
+    justify-content: space-between;
+    gap: 72px;
+  }
+}
