@@ -1,0 +1,23 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray-950);
+}
+
+.logo--light {
+  color: var(--gray-50);
+}
+
+.logo__mark {
+  width: 29px;
+  height: 32px;
+  color: var(--lime);
+}
+
+.logo__text {
+  font-family: var(--font-logo);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
