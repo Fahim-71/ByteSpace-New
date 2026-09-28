@@ -1,0 +1,129 @@
+.auth {
+  min-height: 100vh;
+}
+
+.auth__container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.auth__header {
+  display: flex;
+  align-items: center;
+  height: 88px;
+}
+
+.auth__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ---------- Left side ---------- */
+.auth__intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 475px;
+  color: var(--gray-50);
+}
+
+.auth__title {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -0.01em;
+}
+
+.auth__collage {
+  display: none;
+}
+
+/* ---------- White panel ---------- */
+.auth__panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 40px 24px;
+  border-radius: var(--radius-card);
+  background: var(--white);
+}
+
+@media (min-width: 640px) {
+  .auth__title {
+    font-size: 32px;
+  }
+
+  .auth__panel {
+    padding: 61px 63px 40px;
+  }
+}
+
+/* Two columns + collage on large screens (positions from the 1440px design) */
+@media (min-width: 1280px) {
+  .auth__container {
+    padding-bottom: 120px;
+  }
+
+  .auth__header {
+    align-items: flex-start;
+    height: 120px;
+    padding-top: 35px;
+  }
+
+  .auth__body {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .auth__intro {
+    flex-shrink: 0;
+    width: 552px;
+    min-height: 771px;
+  }
+
+  .auth__intro .text-lead {
+    max-width: 475px;
+  }
+
+  .auth__collage {
+    position: absolute;
+    top: 185px;
+    left: -25px;
+    display: block;
+    width: 552px;
+    height: 586px;
+  }
+
+  .auth__card {
+    position: absolute;
+    width: 373px;
+  }
+
+  .auth__card--back {
+    top: 89px;
+    left: 27px;
+  }
+
+  .auth__card--front {
+    top: 0;
+    left: 138px;
+  }
+
+  .auth__students {
+    position: absolute;
+    top: 435px;
+    left: 253px;
+  }
+
+  .auth__panel {
+    flex-shrink: 0;
+    width: 579px;
+    min-height: 784px;
+  }
+}
