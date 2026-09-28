@@ -1,0 +1,217 @@
+.hero {
+  position: relative;
+  isolation: isolate; /* keeps the decorative shapes (z-index: -1) inside the hero */
+  overflow: hidden;
+}
+
+/* the 3D shapes would cover the text on small screens */
+.hero__decor {
+  display: none;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 24px;
+  text-align: center;
+}
+
+.hero__title {
+  max-width: 935px;
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.hero__text {
+  max-width: 819px;
+  margin-top: 24px;
+  color: var(--gray-100);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* ---------- Search ---------- */
+.hero__search {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  max-width: 581px;
+  margin-top: 40px;
+}
+
+.hero__input {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  height: 52px;
+  padding: 0 20px;
+  border-radius: 24px;
+  background: var(--white);
+}
+
+.hero__input:focus-within {
+  box-shadow: 0 0 0 2px var(--lime);
+}
+
+.hero__search-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: var(--gray-400);
+}
+
+.hero__input input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  color: var(--gray-950);
+  font-size: 16px;
+}
+
+.hero__input input::placeholder {
+  color: var(--gray-400);
+}
+
+.hero__input input:focus {
+  outline: none;
+}
+
+/* ---------- Collage ----------
+   .hero__stage is always 1149 x 510px (like in Figma).
+   On smaller screens we shrink it with transform: scale(),
+   and give .hero__visual the matching (scaled) height. */
+.hero__visual {
+  position: relative;
+  height: 235px;
+}
+
+.hero__stage {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1149px;
+  height: 510px;
+  transform: translateX(-50%) scale(0.46);
+  transform-origin: top center;
+}
+
+.hero__stage > * {
+  position: absolute;
+}
+
+.hero__ring {
+  top: 68px;
+  left: 0;
+  width: 1149px;
+  height: 1149px;
+  border: 320px solid var(--lime-500);
+  border-radius: 50%;
+}
+
+.hero__student {
+  top: -2px;
+  left: 286px;
+  width: 578px;
+  height: 541px;
+  max-width: none;
+  object-fit: cover;
+  box-shadow:
+    5px 8px 10px rgb(0 0 0 / 0.07),
+    17px 24px 24px rgb(0 0 0 / 0.09),
+    51px 73px 72px rgb(0 0 0 / 0.13);
+}
+
+.hero__topic {
+  top: 125px;
+  left: 259px;
+}
+
+.hero__progress {
+  top: 137px;
+  left: 697px;
+}
+
+.hero__students {
+  top: 323px;
+  left: 183px;
+}
+
+@media (min-width: 640px) {
+  .hero__text {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .hero__title {
+    font-size: 56px;
+  }
+
+  .hero__search {
+    gap: 16px;
+  }
+
+  .hero__input {
+    padding: 0 24px;
+  }
+
+  .hero__input input {
+    font-size: 18px;
+  }
+
+  .hero__visual {
+    height: 306px;
+  }
+
+  .hero__stage {
+    transform: translateX(-50%) scale(0.6);
+  }
+}
+
+@media (min-width: 768px) {
+  .hero__decor {
+    display: block;
+  }
+
+  .hero__visual {
+    height: 383px;
+  }
+
+  .hero__stage {
+    transform: translateX(-50%) scale(0.75);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero__content {
+    padding-top: 49px;
+  }
+
+  .hero__title {
+    font-size: 72px;
+  }
+
+  .hero__text {
+    margin-top: 32px;
+  }
+
+  .hero__search {
+    margin-top: 60px;
+  }
+
+  .hero__visual {
+    height: 510px;
+  }
+
+  .hero__stage {
+    transform: translateX(-50%);
+  }
+}

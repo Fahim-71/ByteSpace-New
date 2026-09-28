@@ -1,0 +1,22 @@
+.section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 917px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title h2 {
+  color: var(--ink);
+}
+
+.section-title p {
+  color: var(--gray-400);
+}
+
+/* makes the long title break into two lines like in the design */
+.section-title__narrow {
+  max-width: 600px;
+}
