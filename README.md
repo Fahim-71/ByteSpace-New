@@ -1,6 +1,6 @@
 # ByteSpace – Landing Page
 
-A responsive implementation of the **ByteSpace** course-platform design from Figma, built for the Doin Tech Jr. Software Engineer (Frontend) assessment.
+A responsive implementation of the **ByteSpace** course-platform design from Figma
 
 ## Pages
 
